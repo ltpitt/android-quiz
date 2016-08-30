@@ -25,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
         RadioButton firstRadioButton = (RadioButton) findViewById(R.id.firstRadioButton);
         firstRadioButton.setChecked(true);
 
-
     }
 
 
@@ -82,26 +81,17 @@ public class MainActivity extends AppCompatActivity {
         // find the radiobutton by returned id
         selectedRadioButton = (RadioButton) findViewById(selectedId);
 
-        //Log.v("Radiobutton", selectedRadioButton.getText().toString());
-        Log.v("Nickname : ", answer1.getText().toString());
-        Log.v("GitHub : ", answer2.getText().toString());
-        Log.v("Programming language 1: ", checkbox1Value );
-        Log.v("Programming language 2: ", checkbox2Value );
-        Log.v("Programming language 3: ", checkbox3Value );
-        Log.v("Programming language 4: ", checkbox4Value );
-        Log.v("Coding hours per day: ", selectedRadioButton.getText().toString());
-
         StringBuffer result = new StringBuffer();
         int totalPoints = 0;
         int question3Points = 0;
 
-        if (answer1.getText().toString().equals("google")) {
+        if (answer1.getText().toString().equalsIgnoreCase("google")) {
             result.append("Answer to question 1 is right");
             totalPoints += 1;
         } else {
             result.append("\nAnswer to question 1 is wrong");
         }
-        if (answer2.getText().toString().equals("mountain view")) {
+        if (answer2.getText().toString().equalsIgnoreCase("mountain view")) {
             result.append("\nAnswer to question 2 is right");
             totalPoints += 1;
         } else {
