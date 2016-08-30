@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">Quiz</string>
-    <string name="question1">Nick</string>
-    <string name="question2">Github</string>
-    <string name="question3">Preferred languages</string>
-    <string name="question4">Coding hours per day</string>
+    <string name="question1">Who owns Android?</string>
+    <string name="question2">Where is Google HQ?</string>
+    <string name="question3">Which is Android\'s programming language?</string>
+    <string name="question4">When was 1st Android commercial device released?</string>
     <string name="submit">Ok</string>
     <string name="cancel">Cancel</string>
 </resources>

@@ -26,7 +26,9 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.25"
-                    android:text="@string/question1" />
+                    android:text="@string/question1"
+                    android:paddingBottom="30dp"
+                    />
 
                 <EditText
                     android:id="@+id/answer1"
@@ -40,13 +42,16 @@
                 style="@style/VerticalThemeLayoutInputs"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal" >
+                android:orientation="horizontal"
+                >
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.25"
-                    android:text="@string/question2" />
+                    android:text="@string/question2"
+                    android:paddingBottom="30dp"
+                    />
 
                 <EditText
                     android:id="@+id/answer2"
@@ -140,22 +145,22 @@
                             android:id="@+id/firstRadioButton"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="1"
+                            android:text="1998"
                             />
                         <RadioButton
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="3"
+                            android:text="2001"
                             />
                         <RadioButton
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="5"
+                            android:text="2005"
                             />
                         <RadioButton
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="More than 5"
+                            android:text="2008"
                             />
                     </RadioGroup>
 

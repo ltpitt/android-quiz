@@ -92,44 +92,51 @@ public class MainActivity extends AppCompatActivity {
         Log.v("Coding hours per day: ", selectedRadioButton.getText().toString());
 
         StringBuffer result = new StringBuffer();
+        int totalPoints = 0;
+        int question3Points = 0;
 
-        if (answer1.getText().toString().equals("ltpitt")) {
-            result.append("Correct, Nickname: ").append(answer1.getText().toString());
+        if (answer1.getText().toString().equals("google")) {
+            result.append("Answer to question 1 is right");
+            totalPoints += 1;
         } else {
-            result.append("Wrong, Nickname: ").append(answer1.getText().toString());
+            result.append("\nAnswer to question 1 is wrong");
         }
-
-        if (answer2.getText().toString().equals("github.com/ltpitt")) {
-            result.append("\nCorrect, GitHub: ").append(answer2.getText().toString());
+        if (answer2.getText().toString().equals("mountain view")) {
+            result.append("\nAnswer to question 2 is right");
+            totalPoints += 1;
         } else {
-            result.append("\nWrong, GitHub: ").append(answer2.getText().toString());
+            result.append("\nAnswer to question 2 is wrong");
         }
-
         if (checkbox1Value.equals("Java")) {
-            result.append("\nCorrect, you chose a great programming language: ").append(checkbox1Value);
-        } else {
-            result.append("\nWrong, Java is very important");
+            question3Points += 1;
+            if (checkbox2Value.equals("PHP") || checkbox3Value.equals("Python") || checkbox4Value.equals("Ruby")) {
+                question3Points -= 1;
+            }
         }
-        if (checkbox2Value.equals("PHP")) {
-            result.append("\nWrong, why did you choose: ").append(checkbox2Value);
+        if (question3Points > 0) {
+            result.append("\nAnswer to question 3 is right");
+            totalPoints += 1;
         } else {
-            result.append("\nCorrect, wise choice. PHP is such a dinosaur!");
-        }
-        if (checkbox3Value.equals("Python")) {
-            result.append("\nCorrect, you chose the best programming language ever: ").append(checkbox3Value);
-        } else {
-            result.append("\nWrong, sorry but Python is very important");
-        }
-        if (checkbox4Value.equals("Ruby")) {
-            result.append("\nWrong, language chosen: ").append(checkbox4Value);
-        } else {
-            result.append("\nCorrect, wise choice. Ruby bores me to death!");
+            result.append("\nAnswer to question 3 is wrong");
         }
 
-        if (selectedRadioButton.getText().toString().equals("5")) {
-            result.append("\nPerfect! You choose the right answer: ").append(selectedRadioButton.getText().toString());
+        if (selectedRadioButton.getText().toString().equals("2008")) {
+            result.append("\nAnswer to question 4 is right\n");
+            totalPoints += 1;
         } else {
-            result.append("\nI do not agree with the amount of hours you chose, try again!");
+            result.append("\nAnswer to question 4 is wrong\n");
+        }
+
+        if (totalPoints == 4) {
+            result.append("\nHooray!\nYou got the maximum:\n4 correct answers!");
+        } else if (totalPoints == 3) {
+            result.append("\nAch, that was close...\nYou got almost the maximum:\n3 correct answers.\nTry again!");
+        } else if (totalPoints == 2) {
+            result.append("\nNot that bad...\n2 correct answers.\nI bet you can do better than that!");
+        } else if (totalPoints == 1) {
+            result.append("\nMmmh...\nCome on!\nI was expecting more...\n1 correct answer.\nYou can to it! Try again.");
+        } else if (totalPoints == 0) {
+            result.append("\nDid you fall asleep on the keyboard?\n0 correct answers.\nWake up, Neo!");
         }
 
 
